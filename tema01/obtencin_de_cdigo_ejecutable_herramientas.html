@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Obtención de código ejecutable. Herramientas | tema01 </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Fran Jaraba" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8.1 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-7"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<header id="header" ><div id="headerContent">tema01</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Unitat Didàctica</a></li>
+   <li class="current-page-parent"><a href="desarrollo_de_software.html" class="current-page-parent daddy">Desarrollo de Software</a>
+   <ul>
+      <li><a href="concepto_de_programa.html" class="no-ch">Concepto de programa</a></li>
+      <li><a href="cdigo_fuente_objeto_y_ejecutable.html" class="no-ch">Código Fuente, Objeto y Ejecutable</a></li>
+      <li><a href="mquina_virtual.html" class="no-ch">Máquina virtual</a></li>
+      <li><a href="lenguajes_de_programacin.html" class="daddy">Lenguajes de programación</a>
+      <ul class="other-section">
+         <li><a href="caractersticas_de_los_lenguajes_ms_difundidos.html" class="no-ch">Características de los lenguajes más difundidos</a></li>
+      </ul>
+      </li>
+      <li><a href="fases_del_desarrollo_de_una_aplicacin.html" class="daddy">Fases del desarrollo de una aplicación</a>
+      <ul class="other-section">
+         <li><a href="modelos_de_desarrollo_de_software.html" class="no-ch">Modelos de desarrollo de software</a></li>
+      </ul>
+      </li>
+      <li><a href="estructuras_de_equipos_de_trabajo_para_el_desarrollo_y_revisin_de_programas_informticos.html" class="no-ch">Estructuras de equipos de trabajo para el desarrollo y revisión de programas informáticos</a></li>
+      <li id="active"><a href="obtencin_de_cdigo_ejecutable_herramientas.html" class="active no-ch">Obtención de código ejecutable. Herramientas</a></li>
+   </ul>
+   </li>
+   <li><a href="desenvolupament_de_software.html" class="no-ch">Desenvolupament de Software</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="estructuras_de_equipos_de_trabajo_para_el_desarrollo_y_revisin_de_programas_informticos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="desenvolupament_de_software.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Obtención de código ejecutable. Herramientas</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id12">
+<div class="iDevice emphasis0" >
+<div id="ta12_122_2" class="block iDevice_content">
+<div class="exe-text"><p>Para ver nuestro programa en ejecución, debemos aplicar unos procesos intermedios mediante los cuales nuestro programa cambia de un estado a otro hasta que obtenemos una versión ejecutable. Este concepto se conoce como <strong>Build</strong>.</p>
+<h2>Proceso de compilación</h2>
+<p>La obtención de un programa ejecutable se lleva a cabo mediante dos programas: el <strong>compilador</strong> y el <strong>enlazador</strong> (<em>linker</em>). Aunque difiere dependiendo de la tecnología o plataforma de programación que usemos. Aun así, la compilación se compone internamente de varias etapas:</p>
+<ul>
+<li><strong><img src="des_soft_14.png" alt="" style="float: right; margin-right: 20px; margin-left: 20px;" width="402" height="126" />Análisis léxico</strong>: se lee secuencialmente todo el código fuente agrupándolo en unidades significativas de caracteres (<em>tokens</em>). Son secuencias de caracteres que tienen significado (int, =, void, …). Todos los espacios en blanco, lineas en blanco, comentarios, etc, se eliminan del programa fuente.<br /><img src="des_soft_15.png" alt="" width="388" height="144" /></li>
+<li><strong>Analizador sintáctico</strong>: recibe el código fuente en forma de tokens (<em>componentes léxicos</em>) y se agrupan jerárquicamente en frases gramaticales que el compilador utiliza para sintetizar la salida. Se comprueba si lo obtenido de la fase anterior es sintácticamente correcto (<em>obedece a la gramática del lenguaje</em>). Por lo general, las frases gramaticales del programa fuente se representan mediante un árbol de análisis sintáctico. El proceso es semejante al análisis gramatical de una frase en lenguaje natural.<br /><img src="des_soft_16.png" alt="" width="240" height="227" /></li>
+<li><strong>Analizador semántico</strong>: se comprueban que las declaraciones son correctas, se verifican los tipos de todas las expresiones, si las operaciones se pueden realizar sobre esos tipos, si los arrays tienen el tamaño adecuado, etc. Esta información se añade al árbol de análisis sintáctico.<br /><br /></li>
+<li><strong>Generación del código intermedio</strong>: tras el análisis semántico el compilador genera un código intermedio. Está entre el lenguaje de alto nivel y el lenguaje de máquina. Este código intermedio debe ser generado de tal manera que hace que sea más fácil de traducir en la máquina de destino.</li>
+</ul>
+<ul>
+<li><strong>Optimización de código</strong>: puede ser asumida como algo que elimina código innecesario, y organiza la secuencia de declaraciones con el fin de acelerar la ejecución del programa sin desperdicio de recursos (CPU, memoria).</li>
+</ul>
+<p>En los lenguajes compilados completamente a codigo máquina, la fase de enlazado (<em>linker</em>) une todos los códigos objetos resultados de la compilación de todos los ficheros fuentes que forman parte de un programa. También se une el código de los métodos de las librerías usadas. Todos estos códigos objetos se traducen a código máquina creando un programa ejecutable (p<em>.e. un fichero .exe</em>).</p>
+<p>El proceso de compilación y enlazado permite crear archivos ejecutables.</p>
+<h2>Herramientas</h2>
+<p>Las herramientas utilizadas para convertir código fuent en código ejecutable son:</p>
+<h3>Compilador</h3>
+<p style="padding-left: 30px;">Un compilador es una <strong>herramienta que traduce el código fuente</strong> de un lenguaje de programación, C, C++ o Java, a un formato optimizado y ejecutable en una máquina concreta. </p>
+<h3>Enlazador (Linker)</h3>
+<p style="padding-left: 30px;">Un enlazador es un programa que toma los objetos generados en los primeros pasos del proceso de compilación, la información de todos los recursos necesarios (<em>biblioteca</em>), quita aquellos recursos que no necesita, y enlaza el código objeto con su(s) biblioteca(s) con lo que finalmente produce un fichero ejecutable o una biblioteca. En el caso de los programas enlazados dinámicamente, el enlace entre el programa ejecutable y las bibliotecas se realiza en tiempo de carga o ejecución del programa.</p>
+<h3>Intérpetes</h3>
+<p style="padding-left: 30px;">Existen lenguajes de programación que no crear archivos ejecutables. Para poder ejecutar estos archivos se necesita un <strong>Intérprete</strong>, que es un <strong>programa informático</strong> que <strong>procesa el código fuente</strong> de un proyecto de software <strong>durante su tiempo de ejecución</strong>, es decir, mientras el software se está ejecutando, y <strong>actúa como una interfaz</strong> <strong>entre</strong> ese <strong>proyecto</strong> y el <strong>procesador</strong>. Un intérprete siempre <strong>procesa el código línea por línea</strong>, de modo que <strong>lee, analiza y prepara</strong> <strong>cada secuencia de forma consecutiva para el procesador</strong>. Para procesar el código fuente del software, el intérprete recurre a sus propias bibliotecas internas: <strong>en cuanto una línea de código fuente se ha traducido</strong> a los correspondientes comandos legibles por máquina, esta <strong>se envía directamente al procesador</strong>.</p>
+<p style="padding-left: 30px;">El proceso de conversión <strong>no finaliza</strong> hasta que se ha <strong>interpretado todo el código</strong>. Solo se interrumpe prematuramente <strong>si se produce un fallo</strong> durante el procesamiento, lo que simplifica mucho la resolución de los errores, ya que la línea de código problemática se detecta inmediatamente después de ocurrir el fallo.</p>
+<p>Los lenguajes que utilizan un intérprete para ser ejecutados se deniminan <strong>lenguajes interpretados</strong> y los que utilizan un compilador se denominan <strong>lenguajes compilados</strong>. Existen lenguajes que permiten las dos soluciones. De esta manera, durante el proceso de escritura y detección de errores utilizan el intérprete para ejecutarse y cuando ya se ha escrito y probado, utilizan un compilador para obtener el archivo ejecutable.</p></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Llicència Creative Commons Reconeixement CompartirIgual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="estructuras_de_equipos_de_trabajo_para_el_desarrollo_y_revisin_de_programas_informticos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="desenvolupament_de_software.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creat amb eXeLearning<span> (Finestra nova)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>
